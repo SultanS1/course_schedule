@@ -11,6 +11,7 @@ import com.alatoo.coursescheduler.R
 import com.alatoo.coursescheduler.dataBase.DataBase
 import com.alatoo.coursescheduler.repository.UserRepository
 import com.alatoo.coursescheduler.databinding.FragmentProfileBinding
+import com.alatoo.coursescheduler.utils.Constants
 import com.alatoo.coursescheduler.viewModels.UserViewModel
 
 class ProfileFragment : Fragment() {
@@ -36,6 +37,7 @@ class ProfileFragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner, Observer{
             binding.groupTxt.text = "Group: " + it[0].course
             binding.nameTxt.text = "Name: " + it[0].name
+            binding.emailTxt.text = "Email: " + Constants.email
         })
 
         binding.optionsBtn.setOnClickListener {

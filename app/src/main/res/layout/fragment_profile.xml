@@ -59,6 +59,12 @@
                 android:layout_height="wrap_content"
                 android:text="COM-21A" />
 
+            <TextView
+                    android:id="@+id/emailTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COM-21A" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

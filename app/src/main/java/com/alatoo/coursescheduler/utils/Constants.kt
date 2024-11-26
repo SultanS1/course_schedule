@@ -1,6 +1,7 @@
 package com.alatoo.coursescheduler.utils
 
 object Constants {
-    const val ACADEMIC_CALENDAR = "http://alatoo.edu.kg/view/public/pages/page.xhtml?id=281#gsc.tab=0"
+    const val ACADEMIC_CALENDAR = "https://alatoo.edu.kg/en/acadcalender/"
     var USER_GROUP = ""
+    var email = "nurik.beka@alatoo.edu.kg"
 }

@@ -1,109 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ui.fragments.MainPageFragment">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Monday"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginVertical="18dp"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mondayRv"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="120dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".ui.fragments.MainPageFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tuesday"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="18dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tuestayRv"
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="120dp"/>
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            app:tabMode="scrollable"
+            app:tabIndicatorGravity="bottom"
+            app:tabBackground="@android:color/transparent"
+            android:scrollIndicators="bottom"
+            app:tabIndicatorColor="@color/black"
+            app:tabTextColor="@color/tab_text_color"
+            app:tabSelectedTextColor="@color/black"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wednesday"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="18dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/wednesdayRv"
+    <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="120dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thursday"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="18dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/thursdayRv"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Friday"
-        android:textSize="18sp"
-        android:layout_marginVertical="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fridayRv"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saturday"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="18dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/saturdayRv"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"/>
+            android:layout_height="match_parent"/>
 
 </LinearLayout>
-
-</ScrollView>

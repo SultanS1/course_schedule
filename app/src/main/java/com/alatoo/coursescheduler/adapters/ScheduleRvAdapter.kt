@@ -6,17 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alatoo.coursescheduler.R
 import com.alatoo.coursescheduler.databinding.ScheduleHolderItemBinding
+import com.alatoo.coursescheduler.entities.Subject
 
 class ScheduleRvAdapter: RecyclerView.Adapter<ScheduleRvAdapter.ViewHolder>() {
 
-    private var items: ArrayList<String> = ArrayList()
-    private var times: ArrayList<String> = ArrayList()
+    private var items: List<Subject> = emptyList()
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val binding = ScheduleHolderItemBinding.bind(itemView)
-        fun bind(item: String, time: String){
-            binding.subjectNameTxt.text = item
-            binding.timeTxt.text = time
+        private val binding = ScheduleHolderItemBinding.bind(itemView)
+        fun bind(item: Subject){
+            binding.subjectNameTxt.text = item.name
+            binding.timeTxt.text = item.startTime + "-" +item.endTime
+            binding.roomTextView.text = item.classroom
+            binding.teacherTextView.text = item.teacherName
         }
     }
 
@@ -30,12 +32,11 @@ class ScheduleRvAdapter: RecyclerView.Adapter<ScheduleRvAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position], times[position])
+        holder.bind(items[position])
     }
 
-    fun setItem(newItems: ArrayList<String>, newTime: ArrayList<String>){
+    fun setItem(newItems: List<Subject>){
         items = newItems
-        times = newTime
         notifyDataSetChanged()
     }
 

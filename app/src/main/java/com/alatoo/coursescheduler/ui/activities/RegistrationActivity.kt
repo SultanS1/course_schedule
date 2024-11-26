@@ -4,13 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import com.alatoo.coursescheduler.MainActivity
 import com.alatoo.coursescheduler.dataBase.DataBase
 import com.alatoo.coursescheduler.repository.UserRepository
 import com.alatoo.coursescheduler.databinding.ActivityRegistrationBinding
 import com.alatoo.coursescheduler.entities.User
 import com.alatoo.coursescheduler.utils.Constants
+import com.alatoo.coursescheduler.utils.SchedulesProvider
 import com.alatoo.coursescheduler.viewModels.UserViewModel
 
 class RegistrationActivity : AppCompatActivity() {
@@ -29,6 +29,7 @@ class RegistrationActivity : AppCompatActivity() {
             val group = binding.groupEditText.text.toString()
             val userName = binding.nameEditText.text.toString()
             Constants.USER_GROUP = group
+            SchedulesProvider.user = group
             if(!group.isEmpty() && !userName.isEmpty()){
                 val user = User(0, userName, group)
                 viewModel.save(user)
